@@ -1,0 +1,14 @@
+Fix bugs related to Matlab vs Scilab compatibility.
+ -- Vincent COUVERT <vincent.couvert@scilab-enterprises.com>  08/11/2012
+
+Issue 587 fixed: With some data, dacefit fails with an error in chol function (the matrix is not definite positive).
+ -- Vincent COUVERT <vincent.couvert@scilab.org>  15/11/2011
+
+Issue 553 fixed: Bad value for dmodel.beta when dacefit called with one output argument (no perf output).
+ -- Vincent COUVERT <vincent.couvert@scilab.org>  21/10/2011
+
+Replace sort by gsort in randperm.sci (sort has been removed in Scilab 5.3.0)
+ -- Vincent COUVERT <vincent.couvert@scilab.org>  14/10/2011
+
+Convert dace_scilab into a scilab-5 compliant toolbox
+ -- Yann COLLETTE <ycollet@freesurf.fr>  21/01/2009

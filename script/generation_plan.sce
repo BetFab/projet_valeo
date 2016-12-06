@@ -1,3 +1,4 @@
+//function []=generation_plan(x1, ...,xm)
 // Betty Fabre - Chyrine Tahri
 // Generation d'un plan
 
@@ -6,4 +7,4 @@ y = 1:1:200;
 
  [X, Y] = meshgrid(x,y);
  Z = 15.*Y;
- mesh(X,Y,Z);
+ mesh(x,y,Z);
