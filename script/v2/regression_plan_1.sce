@@ -12,7 +12,7 @@ upb = [20 20];
 exec generation_plan.sce
 
 // On créé le modéle avec dacefit
-[dmodel, perf] = dacefit(S, Y, regpoly0, corrgauss, theta, lob, upb)
+[dmodel, perf] = dacefit(S', Y, regpoly0, corrgauss, theta, lob, upb)
 
 X = gridsamp([0 0;200 200], 60);
 

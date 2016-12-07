@@ -1,4 +1,3 @@
-function [S, Y]=generation_plan(x, y)
 // Betty Fabre - Chyrine Tahri
 // Generation d'un plan
 
@@ -12,6 +11,4 @@ y = 1:1:200;
  x1 = matrix(X,1,200*200);
  y1 = matrix(Y,1,200*200);
  Y = matrix(Z,1,200*200);
- S = [x1 x2];
-
- return;
+ S = [x1 y1];
