@@ -17,7 +17,7 @@ n = length(x);
 [S, Y] = generation_plan(x,y);
 
 // On créé le modéle avec dacefit
-[dmodel, perf] = dacefit(S', Y, regpoly0, corrgauss, theta, lob, upb);
+[dmodel, perf] = dacefit(S, Y, regpoly0, corrgauss, theta, lob, upb);
 
 X = gridsamp([-100 -100; 300 300], 10);
 
@@ -27,7 +27,8 @@ X = gridsamp([-100 -100; 300 300], 10);
 X1 = matrix(X(:,1),10,10)
 YX = matrix(YX, size(X1))
 X2 = matrix(X(:,2),10,10);
-figure(1), mesh(X1, X2, YX)
-//hold on,
-//plot3(S(:,1),S(:,2),Y,’.k’, ’MarkerSize’,10)
-//hold off
+drawlater;
+mesh(X1, X2, YX);
+xtitle('Extrapolation','x','y','z');
+drawnow;
+
