@@ -9,19 +9,24 @@ lob = [1e-1 1e-1];
 upb = [20 20];
 
 //Generation du plan:
-exec generation_plan.sci
+exec Plan.sci
+
+x=1:10:200; y =x;
+n = length(x);
+
+[S, Y] = generation_plan(x,y);
 
 // On créé le modéle avec dacefit
 [dmodel, perf] = dacefit(S', Y, regpoly0, corrgauss, theta, lob, upb)
 
-X = gridsamp([0 0;200 200], 60);
+X = gridsamp([0 0;200 200], 5);
 
 // nombre de site mx !=1 donc or = MSE mean squared error of the predictor
 [YX MSE] = predictor(X, dmodel);
 
-X1 = reshape(X(:,1),60,60);
-YX = reshape(YX, size(X1));
-X2 = reshape(X(:,2),60,60);
+X1 = matrix(X(:,1),5,5);
+YX = matrix(YX, size(X1));
+X2 = matrix(X(:,2),5,5);
 
 figure(1), mesh(X1, X2, YX)
 hold on,
