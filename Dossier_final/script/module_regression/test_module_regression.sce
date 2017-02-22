@@ -28,8 +28,9 @@ Z = f(X,Y);
 // Affichage de la surface
 clf()
 subplot(2,2,1)
-plot3d(x,y,Z);
-title("Surface initiales");
+//plot3d(x,y,Z,'+');
+param3d1(X(:), Y(:), list(Z(:),-1));
+title("Données initiales");
 
 
 // Transformer sous forme de vecteurs: X(:), Y(:), Z(:) 
