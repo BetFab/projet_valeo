@@ -57,14 +57,14 @@ y = zeros(mx,q);         // initialize result
 f = []; df = []; r = []; dr = [];
 
 if mx == 1 then // one site only
-  dx = ones(m,1) .*. x - dmodel('S');  // distances to design sites
+  dx = ones(m,1) .*. x - dmodel('S');  // distances to design sites   -> DISTANCE PR KRIGEAGE
   if  nargout > 1 then                 // gradient/Jacobian wanted
-    clear tmp; tmp = dmodel('regr');
+    clear tmp; tmp = dmodel('regr');   // **** CALCUL DE f(x) **** -> partie deterministe
     [f,df] = tmp(x);
     clear tmp; tmp = dmodel('corr');
-    [r,dr] = tmp(dmodel('theta'), dx);
+    [r,dr] = tmp(dmodel('theta'), dx);  // **** CALCUL DE r(x) **** -> partie stochastique (avec les distances aux sites) -----> KRIGEAGE ICI
     // Scaled Jacobian
-    dy = (df * dmodel('beta'))' + dmodel('gamma') * dr;
+    dy = (df * dmodel('beta'))' + dmodel('gamma') * dr; // y(x) = f(x)T*beta + r(x)T*gamma
     // Unscaled Jacobian
     or1 = (dy .* (ones(1,nx) .*. dmodel('Ysc')(2, :)')) ./ (ones(q,1) .*. dmodel('Ssc')(2,:));
     if q == 1 then

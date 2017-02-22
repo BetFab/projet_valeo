@@ -137,10 +137,10 @@ obj = %inf;
 fit = mlist(['dace_fit','sigma2','beta','gamma','C','Ft','G'],%nan,%nan,%nan,%nan,%nan,%nan);
 m   = size(par('F'),1);
 // Set up  R
-clear tmp; tmp = par('corr');
-r   = tmp(theta, par('D'));
+clear tmp; tmp = par('corr');  // correlation
+r   = tmp(theta, par('D'));     // matrice de corrélation /r aux distances --> KRIGEAGE 
 o   = (1:m)';
-mu  = (10+m)*%eps;
+mu  = (10+m)*%eps;  // 0 ? <?>
 idx = find(r>0);
 R   = sparse([[par('ij')(idx,1); o] [par('ij')(idx,2); o]], [r(idx); ones(m,1)+mu]);
 // Cholesky factorization with check for pos. def.
@@ -235,8 +235,8 @@ if  length(ng) > 1 then // Try to improve starting guess
       tt = tk .* v; 
       [ff  fitt] = objfunc(tt,par);  nv = nv+1;
       itpar('perf')(:,nv) = [tt; ff; 1];
-      if  ff <= fk then
-        tk = tt;  fk = ff;
+      if  ff <= fk then // Si c'est mieux 
+        tk = tt;  fk = ff; //MAJ
         if  ff <= f then
           t = tt;  f = ff;  fit = fitt; jdom = j;
         end
