@@ -14,7 +14,6 @@ function  [beta, J_historique] = descenteGradient(F, Z, beta, taux, nb_iter)
 
 J_historique = ones(nb_iter,1); // vecteur colonne de 0
 m = length(Z); // nombre d'exemples
-disp(size(J_historique));
 
 for iter = 1:nb_iter
 	grad_J = (1/m)*F'*(F*beta - Z);
