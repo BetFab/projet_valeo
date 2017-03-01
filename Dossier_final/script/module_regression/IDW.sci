@@ -12,8 +12,8 @@ function [zpt]=IDW(xpt,ypt,X,Y,Z)
     end
     
     for i=1:length(Z)
-        dist=sqrt((xpt-X(i))**2 + (ypt-Y(i))**2);        
-        poids=1/M/dist; //cf livre Leborgne = lambda-i
+        dist=1/sqrt((xpt-X(i))**2 + (ypt-Y(i))**2);        
+        poids=dist/M;// = lambda-i
         zpt=zpt+poids*Z(i);
     end
     
