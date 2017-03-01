@@ -35,8 +35,30 @@ Y=Y(:);
 indvalues = find(~isnan(Z1));
 indinterp = find(isnan(Z1));
 Z1remain = Z1(indvalues);
-Z2=IDW(X(indinterp),Y(indinterp),X(indvalues),Y(indvalues),Z1remain);
+X2=X(indinterp);
+Y2=Y(indinterp);
+X1=X(indvalues);
+Y1=Y(indvalues);
+Z2=IDW(X2,Y2,X1,Y1,Z1remain);
+
+disp(size(Z2))
 clf()
 subplot(1,2,1)
-plot3d(x,y,Z);
-title("Surface initiales");
+plot3d(X1,Y1,Z1remain);
+title("Surface tronquée");
+subplot(1,2,2)
+plot3d(X2,Y2,Z2);
+title("Surface IDW");
+param3d1(X2,Y2,Z2)
+
+
+
+
+
+// ---------
+
+
+
+
+
+
