@@ -1,0 +1,154 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (MiKTeX 2.9 64-bit) (preloaded format=xelatex 2016.4.14)  1 MAR 2017 06:55
+entering extended mode
+**rapport.tex
+("C:\Users\Betty FABRE\Desktop\projet_valeo\Dossier_final\rapport.tex"
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 68 languages loaded.
+("C:\Program Files\Latex\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\Latex\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\Latex\tex\latex\babel\babel.sty"
+Package: babel 2014/09/25 3.9l The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\Latex\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\Latex\tex\latex\babel-french\frenchb.ldf"
+Language: frenchb 2014/10/25 v3.1c French support from the babel system
+
+("C:\Program Files\Latex\tex\latex\babel\babel.def"
+File: babel.def 2014/09/25 3.9l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+
+("C:\Program Files\Latex\tex\latex\babel\xebabel.def"))
+\l@acadian = a dialect from \language\l@french 
+\l@canadien = a dialect from \language\l@french 
+\FBcolonskip=\skip43
+\FBthinskip=\skip44
+\FB@interchartokenstateORI=\count89
+Package frenchb.ldf Info: No need for active punctuation characters
+(frenchb.ldf)             with this version of XeTeX!
+(frenchb.ldf)             reported on input line 264.
+\FB@punctthick=\XeTeXintercharclass4
+\FB@punctthin=\XeTeXintercharclass5
+\FB@punctnul=\XeTeXintercharclass6
+\FB@guilo=\XeTeXintercharclass7
+\FB@guilf=\XeTeXintercharclass8
+\FB@guilnul=\XeTeXintercharclass9
+\FBguillskip=\skip45
+\FBguill@level=\count90
+\FB@Mht=\dimen104
+LaTeX Info: Redefining \degres on input line 745.
+\std@mcc=\count91
+\dec@mcc=\count92
+\listindentFB=\skip46
+\labelwidthFB=\skip47
+\leftmarginFB=\skip48
+\parindentFFN=\dimen105
+))
+("C:\Program Files\Latex\tex\latex\carlisle\scalefnt.sty")
+("C:\Program Files\Latex\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\Latex\tex\latex\base\inputenc.sty"
+Package: inputenc 2014/04/30 v1.2b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) ("C:\Program Files\Latex\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\Latex\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+)
+Requested font "ecrm1000" at 10.0pt
+)
+("C:\Users\Betty FABRE\Desktop\projet_valeo\Dossier_final\rapport.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Info: Redefining \dots on input line 12.
+LaTeX Info: Redefining \up on input line 12.
+
+
+Package frenchb.ldf Warning: Add \usepackage{fontspec} to the
+(frenchb.ldf)                preamble of your document, on input line 12.
+
+Requested font "ecrm1728" at 17.28pt
+Requested font "ecrm1200" at 12.0pt
+Requested font "cmr12" at 12.0pt
+Requested font "cmr8" at 8.0pt
+Requested font "cmr6" at 6.0pt
+Requested font "cmmi12" at 12.0pt
+Requested font "cmmi8" at 8.0pt
+Requested font "cmmi6" at 6.0pt
+Requested font "cmsy10" at 12.0pt
+Requested font "cmsy8" at 8.0pt
+Requested font "cmsy6" at 6.0pt
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+Requested font "ecrm1440" at 14.4pt
+Requested font "ecbx1440" at 14.4pt
+Invalid UTF-8 byte or sequence at line 19 replaced by U+FFFD.
+Missing character: There is no � in font ecbx1440!
+Requested font "ecbx1200" at 12.0pt
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Missing character: There is no � in font ecbx1200!
+Missing character: There is no � in font ecbx1200!
+Invalid UTF-8 byte or sequence at line 23 replaced by U+FFFD.
+Missing character: There is no � in font ecbx1440!
+Requested font "ecbx1000" at 10.0pt
+Invalid UTF-8 byte or sequence at line 27 replaced by U+FFFD.
+Missing character: There is no � in font ecbx1000!
+Invalid UTF-8 byte or sequence at line 29 replaced by U+FFFD.
+Missing character: There is no � in font ecbx1200!
+[1
+
+] ("C:\Users\Betty FABRE\Desktop\projet_valeo\Dossier_final\rapport.aux") ) 
+Here is how much of TeX's memory you used:
+ 1471 strings out of 428790
+ 18418 string characters out of 3165661
+ 80502 words of memory out of 3000000
+ 4817 multiletter control sequences out of 15000+200000
+ 11766 words of font info for 30 fonts, out of 3000000 for 9000
+ 1096 hyphenation exceptions out of 8191
+ 28i,6n,30p,192b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on rapport.pdf (1 page).

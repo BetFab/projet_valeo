@@ -71,6 +71,9 @@ beta = zeros(6, 1);
 Z_tilde = F * beta;
 
 z_tilde = matrix(Z_tilde, sqrt(length(Z_tilde)), sqrt(length(Z_tilde)));
+
+disp(size(Z_tilde))
+
 subplot(2,2,3);
 plot3d(x, y, z_tilde);
 title("Surface après regression");
