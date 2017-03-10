@@ -1,3 +1,6 @@
+// Betty FABRE - Chyrine TAHRI
+// Test de la ponderation inverse a la distance
+
 clear ;          // Clear all variables
 clc;             // Clear console
 xdel(winsid());  // Close all figures
@@ -27,7 +30,7 @@ Z=Z(:);
 N = size(Z,1);
 
 indnan = unique(ceil(rand(floor(N/2),1)*N)); // May remove randomly ~ ? % of points
-// TODO : points à supprimer à voir..
+// TODO : points a supprimer a voir..
 Z1 = Z ;
 Z1(indnan) = %nan;
 X=X(:);
