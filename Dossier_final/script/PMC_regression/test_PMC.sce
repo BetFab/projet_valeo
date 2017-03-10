@@ -17,14 +17,14 @@ getd(get_absolute_file_path('test_PMC.sce'));
 
 donnees = [];
 donnees.dim = 2 ; // surface dans R^3
-donnees.nb_exemples = 2500;
+donnees.nb_exemples = 20*20;
 donnees.nb_classe = 1; // f(x,y)
 donnees.coordonnees = zeros (donnees.nb_exemples, donnees.dim);
 donnees.sorties = zeros(donnees.nb_exemples,1);
 
 
 // Création d'une grille:
-nx = 50; ny = 50;
+nx = 20; ny = 20;
 x = linspace(0,1,nx);
 y = linspace(0,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -43,8 +43,9 @@ title("Données initiales");
 
 disp(size(donnees.sorties))
 subplot(2,2,2)
-param3d1(X(:), Y(:), list(donnees.sorties(:),-1));
-title("Données initiales entre -1 et 1");
+//param3d1(X(:), Y(:), list(donnees.sorties(:),-1));
+plot3d1(x, y, matrix(donnees.sorties(:), length(x), length(y)));
+title("Données initiales entre 0 et 1");
 
 
 // Définition du réseau de neurones: 
@@ -52,12 +53,12 @@ title("Données initiales entre -1 et 1");
 
 reseau = [];
 reseau.dim_entree = donnees.dim;
-reseau.dim_cachees = 3;
+reseau.dim_cachees = 10;
 reseau.dim_sortie = donnees.nb_classe;
 
 // Apprentissage:
-nb_iter = 100;
-mse = 0.00000001;
+nb_iter = 300;
+mse = 0.00001;
 taux_apprentissage = 1;
 
 disp("Apprentissage : ");
@@ -69,13 +70,13 @@ subplot(2,2,3)
 plot(stats);
 title("Statistiques d apprentissage");
 subplot(2,2,4)
-disp(size(sorties))
-param3d1(X(:), Y(:), list(sorties,-1));
+xlabel("nombre d itération");
+ylabel("Erreur");
 disp(reseau)
 
 // Interpolation:
 // Création d'une grille:
-nx = 100; ny = 100;
+nx = 50; ny = 50;
 x = linspace(0,1,nx);
 y = linspace(0,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -85,11 +86,12 @@ Y = Y(:);
 Z = zeros(length(X),1);
 for i = 1:length(X)
 	Z(i) = PMCpropagation(reseau, [X(i) Y(i)]);
-	//disp(Z(i))
 end
 
 //Z = Z*max;
 Z = matrix(Z, sqrt(length(Z)), sqrt(length(Z)));
-//subplot(2,2,4)
-//plot3d(x,y, Z);
-//title("Données interpolées");
+//Z = Z*2-1;
+//Z = Z.* max_z;
+subplot(2,2,4)
+plot3d(x,y,Z);
+title("Surface generée par le réseau de neurones");

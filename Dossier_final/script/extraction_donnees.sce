@@ -17,6 +17,10 @@ xdel(winsid());  // Close all figures
 //lines(50,120);   // Plot console using x lines and y columns
 stacksize max;   // Max possible stacksize (2 GB)
 
+
+d = pwd();
+getd(d+'\module_regression');
+getd(d+'\PMC_regression');
 // -----------------------------------------------------------------
 
 Fn_vec = [5 6 7 8 9 10 12 14 16 18 20 25 30 35 40 45 50 55 60];
@@ -95,4 +99,108 @@ title('Données L..... Angle (LA)')
 xlabel("FN");
 ylabel("AA");
 zlabel("LA");
+f.color_map=jetcolormap(16);
+
+
+
+
+//----------------------------------------------
+// TEST REGRESSION 
+// -----------------------------------------------
+FN = base_modele(:,1);
+AA = base_modele(:,2);
+CA = base_modele(:,3);
+
+FN_test = base_test(:,1);
+AA_test = base_test(:,2);
+CA_test = base_test(:,3);
+
+beta = regression(FN, AA , CA);
+
+[X2, mu_X2, sigma_X2] = normalisation(FN_test.*FN_test);
+[Y2, mu_Y2, sigma_Y2] = normalisation(AA_test.*AA_test);
+[XY, mu_XY, sigma_XY] = normalisation(FN_test.*AA_test); 
+[X, mu_X, sigma_X] = normalisation(FN_test);
+[Y, mu_Y, sigma_Y] = normalisation(AA_test);
+
+
+// F = matrice contenant toutes les variables
+F = [X2 Y2 X Y XY ones(length(CA_test),1)];
+
+CA_prediction = F * beta;
+f = scf();
+plot3d1(Fn_vec,AA_vec,CA_mat);
+title('Données Contact Angle (CA) - regression')
+param3d1(FN_test,AA_test, list(CA_prediction,-1));
+xlabel("FN");
+ylabel("AA");
+zlabel("CA");
+f.color_map=jetcolormap(16);
+disp(size(CA_prediction))
+
+//--------------------------------------------------------------
+// TEST PMC
+//---------------------------------------------------------------
+
+donnees = [];
+donnees.dim = 2 ; // surface dans R^3
+donnees.nb_exemples = length(FN);
+donnees.nb_classe = 1; // f(x,y)
+donnees.coordonnees = zeros (donnees.nb_exemples, donnees.dim);
+donnees.sorties = zeros(donnees.nb_exemples,1);
+
+donnees.coordonnees = [FN,AA];
+//[donnees.sorties max_z] = scaling(CA);
+[donnees.sorties max_ca]= scaling(CA);
+
+// Réseau de neurones avec 1 couche cachée
+
+reseau = [];
+reseau.dim_entree = donnees.dim;
+reseau.dim_cachees = 5;
+reseau.dim_sortie = donnees.nb_classe;
+
+
+// Apprentissage:
+nb_iter = 15000;
+mse = 0.0000001;
+taux_apprentissage = 0.001;
+
+//[reseau stats sorties] = PMCLearning(reseau, donnees, taux_apprentissage, mse, nb_iter);
+
+X = FN_test;
+Y = AA_test;
+Z = zeros(length(X),1);
+for i = 1:length(X)
+	//Z(i) = PMCpropagation(reseau, [X(i) Y(i)]);
+end
+Z = Z*max_ca;
+disp("Z")
+disp(Z)
+disp("CA_test")
+disp(CA_test)
+
+f = scf();
+//plot3d1(Fn_vec,AA_vec,CA_mat);
+//title('Données Contact Angle (CA) Apprentissage')
+//param3d1(FN_test,AA_test, list(Z,-1));
+xlabel("FN");
+ylabel("AA");
+zlabel("CA");
+f.color_map=jetcolormap(16);
+
+//-------------------------------------------------------
+//  TEST TOOLBOX
+//-------------------------------------------------------
+
+
+[dmodel, perf] = dacefit([FN AA], CA, regpoly2, correxp, 1, 0.1, 200);
+[prediction, mse] = predictor([FN_test AA_test], dmodel);
+f = scf();
+plot3d1(Fn_vec,AA_vec,CA_mat);
+title('Données Contact Angle (CA) Toolbox')
+param3d1(FN_test,AA_test, list(prediction,-1));
+xlabel("FN");
+ylabel("AA");
+zlabel("CA");
 f.color_map=jetcolormap(16);

@@ -17,7 +17,7 @@ getd(get_absolute_file_path('test_module_regression.sce'));
 
 
 // Création d'une grille:
-nx = 50; ny = 50;
+nx = 5; ny = 5;
 x = linspace(-1,1,nx);
 y = linspace(-1,1,ny);
 [X,Y] = ndgrid(x,y);
@@ -34,7 +34,5 @@ title("Données initiales");
 
 
 // Transformer sous forme de vecteurs: X(:), Y(:), Z(:) 
-
-// But du module de régression trouver les coefficients 1 , 5 et 0 ailleurs
 beta = regression(X(:), Y(:), Z(:));
 

@@ -12,7 +12,7 @@ function sortie = PMCpropagation (reseau, x)
 
 x = [x 1];
 sortie_cachee = PMCLayerPropagation(x, reseau.IH);
-sortie_cachee = [sortie_cachee' 1];
+sortie_cachee = [sortie_cachee 1];
 sortie = PMCLayerPropagation(sortie_cachee, reseau.HO);
 
 endfunction

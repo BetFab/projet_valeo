@@ -17,8 +17,8 @@ reseau.taux_apprentissage = taux;
 
 ordre_Presentation = 'random' ;      
 
-reseau.IH = rand(reseau.dim_entree+1, reseau.dim_cachees) ;
-reseau.HO = rand(reseau.dim_cachees+1, reseau.dim_sortie) ;
+reseau.IH = rand(reseau.dim_entree+1, reseau.dim_cachees)/2 ;
+reseau.HO = rand(reseau.dim_cachees+1, reseau.dim_sortie)/2 ;
 
 
 // Initialisation des statistiques d'apprentissage
@@ -44,7 +44,7 @@ for iter = 1:nb_max
 		patt_in = [patt_in 1];
 		// Couche cachée
 		hidden_output = PMCLayerPropagation(patt_in, reseau.IH);
-		hidden_output = [hidden_output' 1]; // Ajout du biais
+		hidden_output = [hidden_output 1]; // Ajout du biais
 		// Sortie
 		sortie = PMCLayerPropagation(hidden_output, reseau.HO);
 		

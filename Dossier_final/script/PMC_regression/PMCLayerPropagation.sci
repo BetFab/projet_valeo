@@ -1,6 +1,6 @@
 function  [output] = PMCLayerPropagation(input, W)
 // PMCLayerPropagation propagation à travers d'une couche définie par
-//		des poids. La fonction d'activation utilisée est la fonction tanh
+//		des poids. La fonction d'activation utilisée est la fonction sigmoide
 //
 //
 // input :
@@ -10,10 +10,10 @@ function  [output] = PMCLayerPropagation(input, W)
 //		- output : vecteur contenant les données après propagation
 //
 
+
+// potentiel post-synaptique
 prod_scal = W'*input';
 
-// On ramène la tangente hyperbolique entre 0 et 1 
-// Pour pouvoir appliquer l'algorithme de MAJ des poids.
-output = (tanh(prod_scal)+1)./2;
-//output = prod_scal;
+// Fonction d'activation
+output = 1./(1+exp(-prod_scal));
 endfunction
